@@ -1,12 +1,17 @@
 # Netlify 설정 파일
 
 [build]
-  # 프론트엔드 빌드 명령어
-  command = "npm run build"
-  # 프론트엔드 프로젝트 위치
+  # 모노레포 기준으로 프론트엔드 빌드 실행
+  command = "cd frontend && npm run build"
   publish = "frontend/dist"
-  # 백엔드 서버리스 함수 위치
   functions = "netlify/functions"
+
+# 로컬 dev 시 Vite 개발 서버를 띄우고 Netlify가 프록시하도록 설정
+[dev]
+  # Windows/WSL 모두에서 동작하도록 prefix 플래그 사용
+  command = "npm --prefix frontend run dev -- --host --port 5173"
+  targetPort = 5173
+  publish = "frontend/dist"
 
 # 로컬 개발 환경(netlify dev)에서 API 요청을 올바르게 라우팅하기 위한 설정
 [[redirects]]
