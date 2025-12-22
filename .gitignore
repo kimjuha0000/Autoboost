@@ -1,2 +1,9 @@
 # Local Netlify folder
 .netlify
+
+# Node dependencies
+frontend/node_modules
+backend/node_modules
+
+# Local data store
+data/events.json

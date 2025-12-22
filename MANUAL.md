@@ -52,6 +52,7 @@ Autoboost/
 3.  **Netlify 개발 서버 실행**: 프로젝트 루트에서 `netlify dev` 명령을 실행합니다.
     ```bash
     netlify dev
+    or npx netlify-cli@latest dev
     ```
     이 명령은 `frontend` 앱을 개발 모드로 실행하고, `backend` Express 앱을 `netlify/functions/server.js` 래퍼를 통해 서버리스 함수처럼 실행합니다. Netlify CLI는 프록시 역할을 하여 `/api/*`로 들어오는 요청을 자동으로 백엔드 API로 라우팅합니다.
 
