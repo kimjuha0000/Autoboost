@@ -1,0 +1,15 @@
+# Netlify 설정 파일
+
+[build]
+  # 프론트엔드 빌드 명령어
+  command = "npm run build"
+  # 프론트엔드 프로젝트 위치
+  publish = "frontend/dist"
+  # 백엔드 서버리스 함수 위치
+  functions = "netlify/functions"
+
+# 로컬 개발 환경(netlify dev)에서 API 요청을 올바르게 라우팅하기 위한 설정
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
