@@ -1,7 +1,7 @@
 {
 	"geolocation": {
 		"data": {
-			"city": "Seoul",
+			"city": "Guro-gu",
 			"country": {
 				"code": "KR",
 				"name": "South Korea"
@@ -11,10 +11,10 @@
 				"name": "Seoul"
 			},
 			"timezone": "Asia/Seoul",
-			"latitude": 37.5658,
-			"longitude": 126.978,
-			"postalCode": "04524"
+			"latitude": 37.504,
+			"longitude": 126.8717,
+			"postalCode": "082"
 		},
-		"timestamp": 1766382684518
+		"timestamp": 1766482114515
 	}
 }
