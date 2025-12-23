@@ -2,7 +2,7 @@
 
 [build]
   # 모노레포 기준으로 프론트엔드 빌드 실행
-  command = "cd frontend && npm ci && npm run build"
+  command = "npm ci --prefix backend && npm install --prefix netlify/functions && npm ci --prefix frontend && npm run build --prefix frontend"
   publish = "frontend/dist"
   functions = "netlify/functions"
 
