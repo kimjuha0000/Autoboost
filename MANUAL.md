@@ -37,22 +37,25 @@ Autoboost/
 
 로컬에서 프론트엔드 앱과 백엔드 API(Netlify Functions로 에뮬레이션)를 함께 실행하려면 [`netlify-cli`](https://docs.netlify.com/cli/get-started/)가 필요합니다. 이미 글로벌로 설치되었습니다.
 
-1.  **프로젝트 루트로 이동**: 터미널에서 프로젝트의 최상위 폴더(`Autoboost`)로 이동합니다.
+1.  **Node / npm 버전 고정**: `.nvmrc`에 맞춰 Node 20.x와 npm 10.x를 사용합니다.
     ```bash
-    cd Desktop/juhakim/Autoboost
+    nvm use        # 없는 경우 nvm install 로 설치
+    node -v        # v20.x 확인
+    npm -v         # 10.x 확인
     ```
 2.  **모든 의존성 설치**: `frontend`와 `backend` 폴더 모두에 의존성을 설치합니다.
     ```bash
     cd frontend
-    npm install
+    npm ci
     cd ../backend
-    npm install
+    npm ci
     cd .. # 프로젝트 루트로 다시 이동
     ```
 3.  **Netlify 개발 서버 실행**: 프로젝트 루트에서 `netlify dev` 명령을 실행합니다.
     ```bash
     netlify dev
-    or npx netlify-cli@latest dev
+    or
+    npx netlify-cli@latest dev
     ```
     이 명령은 `frontend` 앱을 개발 모드로 실행하고, `backend` Express 앱을 `netlify/functions/server.js` 래퍼를 통해 서버리스 함수처럼 실행합니다. Netlify CLI는 프록시 역할을 하여 `/api/*`로 들어오는 요청을 자동으로 백엔드 API로 라우팅합니다.
 

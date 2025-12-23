@@ -2,9 +2,12 @@
 
 [build]
   # 모노레포 기준으로 프론트엔드 빌드 실행
-  command = "cd frontend && npm run build"
+  command = "cd frontend && npm ci && npm run build"
   publish = "frontend/dist"
   functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
 
 # 로컬 dev 시 Vite 개발 서버를 띄우고 Netlify가 프록시하도록 설정
 [dev]
